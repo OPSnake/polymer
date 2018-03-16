@@ -4536,7 +4536,7 @@ _notifyPathUpImpl: function (path, value) {
 var dataHost = this.dataHost;
 var root = Polymer.Path.root(path);
 dataHost._forwardInstancePath.call(dataHost, this, path, value);
-if (root in dataHost._parentProps) {
+if (dataHost._parentProps && root in dataHost._parentProps) {
 dataHost._templatized._notifyPath(dataHost._parentPropPrefix + path, value);
 }
 },
